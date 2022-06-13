@@ -13,7 +13,7 @@ RUN apk add build-base rustup \
 FROM alpine:3.16 AS build-v2ray
 
 RUN apk add go git \
-  && git clone https://github.com/shadowsocks/v2ray-plugin \
+  && git clone https://github.com/shadowsocks/v2ray-plugin -b v1.3.1 \
   && cd v2ray-plugin \
   && go build
 
