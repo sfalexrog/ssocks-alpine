@@ -19,4 +19,8 @@ echo "${ss}" | tr -d '\n' > "/wwwroot/${QR_Path}/index.html"
 echo "${ss}" | qrencode -s 6 -o "/wwwroot/${QR_Path}/vpn.png"
 
 echo "admin:$(cryptpw "${PASSWORD}")" > "/wwwroot/${QR_Path}/.htpasswd"
-sed -e "s/PORT/${PORT}/g" -e "s/QR_INFO/${QR_Path}/g" -e "s/V2RAY_LOCATION/${V2_Path}/g" ./conf/nginx.conf > /etc/nginx/http.d/ss.conf
+sed -e "s/PORT/${PORT}/g" -e "s/QR_INFO/${QR_Path}/g" -e "s/V2RAY_LOCATION/${V2_Path}/g" ./conf/nginx.conf > /etc/nginx/http.d/default.conf
+
+ssserver -c /etc/shadowsocks/shadowsocks.json &
+
+nginx -g "daemon off;"
