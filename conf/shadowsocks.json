@@ -1,0 +1,13 @@
+{
+    "server":"127.0.0.1",
+    "server_port":2333,
+    "password": "abcdef123",
+    "timeout":300,
+    "method":"chacha20-ietf-poly1305",
+    "mode": "tcp_only",
+    "fast_open":false,
+    "reuse_port":true,
+    "no_delay":true,
+    "plugin": "v2ray-plugin",
+    "plugin_opts":"server;path=/v2ray"
+}

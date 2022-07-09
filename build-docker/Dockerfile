@@ -23,4 +23,4 @@ COPY --from=build /shadowdist/bin /usr/local/bin
 
 COPY --from=build-v2ray /v2ray-plugin/v2ray-plugin /usr/local/bin/v2ray-plugin
 
-RUN apk add --no-cache nginx jq
+RUN apk add --no-cache nginx jq libqrencode
