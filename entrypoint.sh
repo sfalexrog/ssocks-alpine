@@ -3,7 +3,7 @@
 echo "Password: $PASSWORD"
 echo "Encrypt: $ENCRYPT"
 echo "V2_Path: $V2_Path"
-DOMAIN="${AppName}.heroku.com"
+DOMAIN="${AppName}.herokuapp.com"
 echo "Domain: $DOMAIN"
 echo "QR info location: $QR_Path"
 
