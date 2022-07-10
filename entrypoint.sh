@@ -13,8 +13,8 @@ jq ".password = \"${PASSWORD}\" | .method = \"${ENCRYPT}\" | .plugin_opts = \"se
 
 mkdir -p "/wwwroot/$QR_Path"
 
-plugin="$(echo "v2ray;path=/${V2_Path};host=${DOMAIN};tls" | sed -e 's/\//%2F/g' -e 's/=/%3D/g' -e 's/;/%3B/g')"
-ss="ss://$(echo "$ENCRYPT":"$PASSWORD" | base64 -w 0)@${DOMAIN}:443?plugin=${plugin}"
+plugin="$(printf '%s' "v2ray;path=/${V2_Path};host=${DOMAIN};tls" | sed -e 's/\//%2F/g' -e 's/=/%3D/g' -e 's/;/%3B/g')"
+ss="ss://$(printf '%s' "$ENCRYPT":"$PASSWORD" | base64 -w 0)@${DOMAIN}:443?plugin=${plugin}"
 echo "${ss}" | tr -d '\n' > "/wwwroot/${QR_Path}/index.html"
 echo "${ss}" | qrencode -s 6 -o "/wwwroot/${QR_Path}/vpn.png"
 
