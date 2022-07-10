@@ -8,7 +8,7 @@
         "value": "chacha20-ietf-poly1305"
       },
        "PASSWORD": {
-        "description": "The password of shadowsocks, you can use uuid as the password (http://www.uuid.online/ online generation)",
+        "description": "Shadowsocks server password.",
         "value": "467f9cb4-ffa0-11ec-b934-8723cc26d81c"
       },
   
@@ -18,13 +18,13 @@
       },
   
        "AppName": {
-        "description": "App Name filled in at the top (or even full domain if there is a custom one) to generate the configuration and QR code. If you don’t want to generate it, enter no",
-        "value": "no"
+        "description": "App Name filled in at the top to generate the configuration and QR code.",
+        "value": "heroku-application-name"
       },
   
       "QR_Path": {
-         "description": "QR code and configuration link path, the default qr_img, you can also use uuid for confidentiality, but it cannot be the same as V2_Path. If the AppName variable is no, this variable has no effect",
-         "value": "/qr"
+         "description": "QR code and configuration link path. Should not start nor contain a slash (/) symbol. Visit ${AppName}.herokuapp.com/${QR_Path}/vpn.png to get a scannable QR code",
+         "value": "ce7f0af6-006c-11ed-b477-cb2a42a74286"
        }
     },
     "website": "",
